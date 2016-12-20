@@ -2,46 +2,47 @@
 <html>
 <head>
 	<title>3 En Raya</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="3enRaya.css" />
+	<script src="3enRaya.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" /></script>
 </head>
 
 <body>
 
-<div>
-<table>
+<div><table id="tablero">
   <tr>
-	<td>x</td>
-	<td>x</td>
-	<td>x</td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
   </tr>
   <tr>
-	<td>x</td>
-    <td>x</td>
-	<td>x</td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+    <td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
   </tr>
   <tr>
-	<td>x</td>
-	<td>x</td>
-	<td>x</td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
   </tr>
-</table>
-</div>
-<div>
-  <table>
+</table></div>
+<div><table id="marcador">
   <tr>
-	<td>Jugador 1</td>
-	<td>Jugador 2</td>
+	<td class="celda">Jugador 1</td>
+	<td class="celda">Jugador 2</td>
   </tr>
   <tr>
-	<td>x</td>
-    <td>x</td>
+	<td class="celda">0</td>
+    <td class="celda">0</td>
   </tr>
+</table></div>
+<div><table id="ficha">
   <tr>
-	<td><input type="button" value="Comenzar"></td>
-    
+	<td class="celda" id="celdafich"></td>
   </tr>
-</table>
-</div>
-
+</table></div>
+<input type="button" value="Comenzar">
 
 </body>
 </html>
