@@ -27,6 +27,7 @@
 	<td class="casilla" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
   </tr>
 </table></div>
+
 <div><table id="marcador">
   <tr>
 	<td class="celda">Jugador 1</td>
@@ -37,12 +38,27 @@
     <td class="celda">0</td>
   </tr>
 </table></div>
+
 <div><table id="ficha">
   <tr>
 	<td class="celda" id="celdafich"></td>
   </tr>
 </table></div>
-<input type="button" value="Comenzar">
+
+<div><table id="mensa">
+  <tr>
+	<td class="celda" id="mensaje">Comienza una partida</td>
+  </tr>
+  <tr>
+    <td><input id="btcom" type="button" value="Comenzar" onclick="jugar()"></td>
+  </tr>
+</table></div>
+
+<script>
+  var ronda=1;
+  $("#ficha").hide();
+</script>
+
 
 </body>
 </html>

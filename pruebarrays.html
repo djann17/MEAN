@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>Curriculum Vitae</title>
+</head>
+<body>
+<div id="ajo"></div>
+<script>
+var aj=document.getElementById("ajo");
+var arr1=new Array();
+//aj.innerHTML += arr1 + "<br />";
+arr1[0]="Zero";
+arr1[1]="Atila";
+arr1[2]="DiskOperativeSystem";
+//aj.innerHTML += arr1 + "<br />";
+
+arr1['propi']="Propp";
+//aj.innerHTML += arr1['propi'] + "<br />";
+var txt="";
+for (var x in arr1){
+  txt+=arr1[x] + "<br />";
+}
+
+
+aj.innerHTML +=txt;
+  
+</script>
+</body>
