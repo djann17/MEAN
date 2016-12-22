@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>Peluco</title>
+	
+</head>
+
+<body>
+  <div>
+    <table id="relojes">
+	  
+	</table>
+  </div>
+  <br />
+
+
+<script>
+
+  function muestraFecha(nom,fecha){
+    var lugar="in"+nom;
+    document.getElementById(lugar).innerHTML=fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getSeconds();;
+  }
+  
+  var casio=new reloj("casio");
+  var rolex=new reloj("rolex");
+  
+  casio.empiezaReloj();
+  rolex.empiezaReloj();
+  
+  function mecan (objRel){
+    return setInterval(function(){ muestraFecha(objRel.nombre, new Date())}, 1000);
+  }
+  
+  function finiq(nom){
+    eval(nom+".acabaReloj()");
+  }
+  
+  function reloj(nombre){
+    this.nombre=nombre;
+	this.empiezaReloj=function (){
+	  var txt="<tr id='" + this.nombre + "' onclick='finiq(\"" + this.nombre + "\")'><td>" + this.nombre + "</td>";
+	  txt+="<td id='in" + this.nombre + "'></td></tr>";	  
+	  document.getElementById("relojes").innerHTML+=txt;
+	  this.relID=mecan(this);
+	}
+	this.acabaReloj=function (){
+	  if(this.relID)
+	    clearInterval(this.relID);
+	  else
+	    alert ("yata");//this.empiezaReloj(); 
+	}
+  }
+
+  
+</script>
+
+</body>
+</html>
