@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<title>Rectángulo</title>
+	
+</head>
+
+<body>
+  <div>
+    <span>Introduce la base: </span>
+    <input type="text" id="base" />
+	<br />
+	<span>Introduce la altura: </span>
+    <input type="text" id="altura" />
+	<br />
+	<input type="button" value="Calcular area rectangulo" onclick="hacerCalc()">
+	<input type="button" value="Calcular area triangulo" onclick="hacerCalc2()">
+	<br />
+	<span id="resultado"></span>
+  </div>
+
+
+
+<script>
+
+  function Figura(base, altura){
+    this.base=base;
+	this.altura=altura;
+  }
+  
+  function Rectangulo(base, altura, resultado){
+    Figura.call(this, base, altura);
+	this.resultado=this.calculo();
+  }
+  
+  function hacerCalc(){
+    var rect= new Rectangulo(document.getElementById("base").value,
+  	  document.getElementById("altura").value);
+	var ajo=rect.calculo();
+	document.getElementById("resultado").innerHTML=ajo;
+  }
+  
+  function hacerCalc2(){
+    var tri= new Triangulo(document.getElementById("base").value,
+  	  document.getElementById("altura").value);
+	var ajo=tri.calcTri();
+	document.getElementById("resultado").innerHTML=ajo;
+  }
+  
+  function Triangulo(base, altura, resultado){
+    Figura.call(this, base, altura);
+	this.resultado=this.calcTri();
+  }
+  Rectangulo.prototype=new Figura;
+  Triangulo.prototype= new Figura;
+  
+  Rectangulo.prototype.calculo = function (){
+    return this.base*this.altura;
+  }
+  
+  Triangulo.prototype.calcTri = function (){
+    return (this.base*this.altura)/2;
+  }
+  
+  
+</script>
+
+</body>
+</html>
