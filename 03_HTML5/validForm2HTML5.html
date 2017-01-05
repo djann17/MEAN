@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Ejercicio validaciones</title>
+</head>
+
+<body>
+    <form name="datos">
+        <span>Nº Teléfono: </span><input type="text" name="telef" /><br />
+        <span>DNI: </span><input type="text" name="dni" /><br />
+        <span>TXT: </span><input type="text" name="txt" required /><br />
+        <span>E-mail: </span><input type="email" id="emi" name="emi" onchange="validaMail(datos)" /><br />
+        <input type="submit" value="Ok" />
+    </form>
+    <script>
+        function validaCampos(dat) {
+            var tel = /^[0-9]{9}$/.test(dat.telef.value);
+            var dni = /^[0-9]{7,8}[A-Za-z]{1}$/.test(dat.dni.value);
+            if (tel && dni)
+                alert("Asias");
+            if (!tel)
+                alert("Teléfono");
+            if (!dni)
+                alert("DNI");
+            return true;
+
+        }
+
+        function validaMail(dat) {
+            var quecoj = dat.txt.value;
+            if (dat.emi.validity.typeMismatch)
+                document.getElementById("emi").setCustomValidity(quecoj);
+            else
+                document.getElementById("emi").setCustomValidity("");
+        }
+    </script>
+</body>
+
+</html>

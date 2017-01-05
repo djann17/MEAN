@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Cargar datos CV</title>
+</head>
+
+<body>
+    <header>
+        <h1>Creación Curriculum Vitae</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Datos Personales</li>
+            <li>Formación Académica</li>
+            <li>Formación Complementaria</li>
+            <li>Experiencia Laboral</li>
+            <li>Conocimientos</li>
+            <ul>
+                <li>Idiomas</li>
+                <li>Lenguajes de Programación</li>
+                <li>Sistemas</li>
+            </ul>
+        </ul>
+    </nav>
+    <section id="pers"></section>
+    <section id="acad"></section>
+    <section id="comp"></section>
+    <section id="labo">
+        <form name="flabo">
+            <input type="text" name="empr" placeholder="Nombre de la empresa" />
+            <!--        <input type="date" name="fini" placeholder="Fecha inicio" />
+            <input type="date" name="ffin" placeholder="Fecha fin" /> -->
+            <input type="text" name="pues" placeholder="Puesto ocupado" />
+            <input type="text" name="tare" placeholder="Labor realizada" />
+            <input type="button" value="Añadir" onclick="creaTrabajo(flabo)" />
+        </form>
+        <br />
+        <hr />
+        <br />
+        <form name="fresu">
+            <textarea id="choj" name="choj" rows="10" cols="30"></textarea>
+            <br />
+            <input type="button" value="Cargar" onclick="cargaTrabajos()" />
+            <br />
+            <hr />
+            <br />
+            <div id="trabs"></div>
+
+        </form>
+
+    </section>
+    <section id="cono">
+        <article id="idio"></article>
+        <article id="prog"></article>
+        <article id="sist"></article>
+    </section>
+    <footer>
+
+    </footer>
+
+
+    <script>
+        var listrab = new Array;
+
+        function creaTrabajo(dat) {
+            var txt = "{";
+            txt += '"empresa":"' + dat.empr.value + '",';
+            txt += '"puesto":"' + dat.pues.value + '",';
+            txt += '"tarea":"' + dat.tare.value + '"}';
+            var tx = JSON.parse(txt);
+            listrab.push(tx);
+            localStorage.setItem("trabajo", listrab);
+        }
+
+        function cargaTrabajos() {
+            var res = localStorage.getItem("trabajo");
+            var txt = "";
+            for (var j = 0; j < res.length; j++)
+                for (var i in res[j])
+                    txt += res[i][j] + "<->";
+
+
+
+            document.getElementById("choj").innerHTML = txt;
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

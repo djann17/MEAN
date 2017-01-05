@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Ejercicio validaciones</title>
+</head>
+
+<body>
+    <form name="datos">
+        <span>Nº Teléfono: </span><input type="text" name="telef" /><br />
+        <span>DNI: </span><input type="text" name="dni" /><br />
+        <input type="button" value="Ok" onclick="validaCampos(datos)" />
+    </form>
+    <script>
+        function validaCampos(dat) {
+            var tel = /^[0-9]{9}$/.test(dat.telef.value);
+            var dni = /^[0-9]{7,8}[A-Za-z]{1}$/.test(dat.dni.value);
+            if (tel && dni)
+                alert("Asias");
+            if (!tel)
+                alert("Teléfono");
+            if (!dni)
+                alert("DNI");
+
+        }
+    </script>
+</body>
+
+</html>
