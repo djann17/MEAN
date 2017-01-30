@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>???</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<style>
+        aside{
+			position:absolute;		
+            width:20%;
+			height:100%;
+            left:0%;
+			padding-left:15px;
+			padding-top:20px;
+			background-color: lightblue;
+        }
+        section{
+			position:absolute;
+			width:80%;
+			height:100%;
+            left:20%;
+			background-color: cyan;
+        }
+	</style>
+
+</head>
+
+<body data-ng-app="webAppNodeHotel">
+
+    <aside>
+        <form>
+            <span>Datos del cliente</span>
+            <br />
+            <input type="text" name="nombre" placeholder="Nombre y apellidos" data-ng-model="" />
+            <br />
+			<input type="email" name="email" placeholder="tumail@servidor.com" data-ng-model="" />
+            <br />			
+            <span>Fecha de entrada</span>
+            <br />
+            <input type="date" name="fecini" />
+            <br />
+            <span>Fecha de salida</span>
+            <br />
+            <input type="date" name="fecfin" placeholder="Salida" />
+            <br />
+            <input type="button" value="Reservar" />
+        </form>
+    </aside>
+    <section>
+        <div id="calendario">
+			<span></span>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>

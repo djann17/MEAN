@@ -3,37 +3,89 @@
 <head>
   <meta charset="UTF-8">
 	<title>GH Hoteles. Lo vais a flipar...</title>
-	<link rel="GH_clases.css />
+<!-- Include meta tag to ensure proper rendering and touch zooming -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Include jQuery Mobile & Bootstrap stylesheets -->
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+<!-- Include the jQuery & Bootstrap libraries -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
-<body>
-	<header>
+<body>	
+<div class="container">
+	<header >
 		<h1>GH HOTELES</h1>
-		<img src="imagenes/LogoGH.jpg" />
+		<!--<img src="imagenes/LogoGH.jpg" /> -->
 	</header>
-	<nav>
-	<ul>
-	<li>Hoteles</li>
-	<li>Servicios</li>
-	<li>Otros</li>
-	</ul>
+	<nav class="navbar navbar-inverse">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>                        
+		</button>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="">Hoteles</a></li>
+				<li><a href="">Servicios</a></li>
+				<li><a href="">Otros</a></li>
+			</ul>
+		</div>
 	</nav>
+	
+	<div class="row">
+		<div class="col-xs-12 col-sm-3">
+			<aside>
+				<form>
+					<div class="form-group">
+						<label for="fecini">Fecha de Entrada</label>
+						<input type="date" class="form-control" id="fecini">
+					</div>
+					<div class="form-group">
+						<label for="fecfin">Fecha de Salida</label>
+						<input type="date" class="form-control" id="fecfin">
+					</div>
+					<div class="form-group">
+						<label for="tiphab">Tipo de Habitación</label><br />
+						<div class="radio-inline">
+							<label><input type="radio" name="optradio">Simple</label>
+						</div>
+						<div class="radio-inline">
+							<label><input type="radio" name="optradio">Doble</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="hotel">Elige tu hotel</label>
+						<select class="form-control" id="hotel">
+							<option>GH Pan Bendito</option>
+							<option>GH San Blas</option>
+							<option>GH Puente de Vallecas</option>
+							<option>GH Paseo de Extremadura</option>
+						</select>
+					</div>
+					
+			
+				</form>
+			</aside>
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			<section>
+				<img class="img-responsive img-rounded" src="imagenes/pan2.jpg" />
 
-	<section>
-	<h2>News Section</h2>
-	<article>
-	<h2>News Article</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
-	</article>
-	<article>
-	<h2>News Article</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
-	</article>
-	</section>
 
-	<footer>
+			</section>
+		</div>
+	</div>
+	<footer class="well well-sm">
 	<p>&copy; 2017 GH Hoteles. Todos los derechos reservados.</p>
 	</footer>
-
+</div>
 </body>
+
+
 
 </html>
