@@ -1,0 +1,13 @@
+{
+  "name": "03-grunt-prueba",
+  "description": "Grunteando",
+  "version": "V 1.0",
+  "author": "Yo",
+  "licence": "Of drive",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

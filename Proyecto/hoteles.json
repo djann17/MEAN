@@ -1,0 +1,47 @@
+{"Hotel1":{
+	"Hotel" : "GH Pan Bendito",
+	"Direccion" : "Avenida de Abrantes, 17, Madrid",
+	"Telefono" : "914427821",
+	"Correo" : "info@panbendito.gh.com",
+	"Habitaciones" : [
+		{"101" : "Individual"},
+		{"102" : "Individual"},
+		{"103" : "Individual"},
+		{"104" : "Individual"},
+		{"201" : "Individual"},
+		{"202" : "Individual"},
+		{"203" : "Individual"},
+		{"204" : "Individual"},
+		{"301" : "Individual"},
+		{"302" : "Individual"},
+		{"303" : "Doble"},
+		{"401" : "Individual"},
+		{"402" : "Individual"},
+		{"403" : "Doble"},
+		{"501" : "Doble"}
+	]
+  },
+"Hotel2":{
+	"Hotel" : "San Blas",
+	"Direccion" : "Avenida de Hellín, 14, Madrid",
+	"Telefono" : "915412578",
+	"Correo" : "info@sanblas.gh.com",
+	"Habitaciones" : [
+		{"101" : "Individual"},
+		{"102" : "Individual"},
+		{"103" : "Individual"},		
+		{"201" : "Individual"},
+		{"202" : "Individual"},
+		{"203" : "Individual"},		
+		{"301" : "Individual"},
+		{"302" : "Individual"},
+		{"303" : "Individual"},		
+		{"401" : "Individual"},
+		{"402" : "Doble"},
+		{"501" : "Individual"},
+		{"502" : "Doble"},
+		{"601" : "Individual"},
+		{"602" : "Doble"}	
+	]
+  }
+}

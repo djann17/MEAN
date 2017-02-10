@@ -1,0 +1,119 @@
+db.movies.insertMany( [
+{
+"title" : "Batman",
+"category" : [ "action", "adventure" ],
+"imdb_rating" : 7.6,
+"budget" : 35
+},
+{
+"title" : "Godzilla",
+"category" : [ "action",
+"adventure", "sci-fi" ],
+"imdb_rating" : 6.6
+},
+{
+"title" : "Home Alone",
+"category" : [ "family", "comedy" ],
+"imdb_rating" : 7.4
+}
+] )
+
+db.grades.count({"student_id": {$lt : 65}}).pretty()  -- 650.
+
+db.inspections.count( {$or: [ {"result": "Pass"} , {"result": "Fail"} ]}) -- 16808
+
+Exercise: View Count > 1000
+In the stories collection, write a query to find all stories where the view count is greater than 1000.
+db.stories.count( {  "shorturl.view_count" : { $gt : 1000 } } ) -- 8331
+
+
+Exercise: Most comments
+Find the news article that has the most comments in the stories collection
+db.stories.find( { "media" : "news" }).sort( { "comments" : -1 } ).limit(1) -- lo de los republicanos
+
+
+Exercise: Television or Videos
+Find all digg stories where the topic name is “Television” or the media type is “videos”. Skip the first 5 results and
+limit the result set to 10.
+db.stories.find({$or:[{ "topic.name" : "Television" }, {"media": "videos"}]}).skip(5).limit(10)
+
+
+Exercise: News or Images
+Query for all digg stories whose media type is either “news” or “images” and where the topic name is “Comedy”. (For
+extra practice, construct two queries using different sets of operators to do this.)
+db.stories.find( {$and : [ { $or : [ {"media": "news"}, {"media": "images"}]}, {"topic.name" : "Comedy"} ] } ).count()
+
+
+In the sample.inspections namespace, let’s imagine that we want to do a little data cleaning. We’ve decided to eliminate
+the “Completed” inspection result and use only “No Violation Issued” for such inspection cases. Please update all
+inspections accordingly.
+db.inspections.updateMany({"result":"Completed"}, { $set: { "result" : "No Violation Issued" } } )  -- 20
+
+Exercise: Set fine value
+For all inspections that failed, set a fine value of 100.
+db.inspections.updateMany({"result":"Fail"}, { $set: { "Fine" : 100 } } )
+
+Exercise: Increase fine in ROSEDALE
+• Update all inspections done in the city of “ROSEDALE”.
+• For failed inspections, raise the “fine” value by 150.
+db.inspections.updateMany({$and:[{"result":"Fail"},{"address.city":"ROSEDALE"}]}, { $inc: { "Fine" : 150 } } ) -- 2
+
+
+Exercise: Give a pass to “MONGODB”
+• TodayMongoDBgot a visit fromthe inspectors.
+• We passed, of course.
+• So go ahead and update “MongoDB” and set the result to “AWESOME”
+• MongoDB’s address is
+{city: 'New York', zip: 10036, street: '43', number: 229}
+db.inspections.updateOne({"business_name":"MONGODB"}, {$set: {"result":"AWESOME"}}, { upsert: true })
+
+
+
+Exercise: Updating Array Elements
+Insert a document representing product metrics for a backpack:
+db.product_metrics.insertOne(
+{ name: "backpack",
+purchasesPast7Days: [ 0, 0, 0, 0, 0, 0, 0] })
+Each 0 within the “purchasesPast7Days” field corresponds to a day of the week. The first element is Monday, the
+second element is Tuesday, etc.).
+Write an update statement to increment the number of backpacks sold on Friday by 200.
+db.product_metrics.updateOne({ "name":"backpack"}, {"$inc" : {"purchasesPast7Days.5":200}})
+
+42
+
+db.customers.insert({
+"_id":"22588436V",
+"first":"Socorro",
+"last":"Siva",
+"email":"sosiva@correoe.tv",
+"phone1":"65999875",
+"phone2":"927899874",
+birthdate:"19690515"})
+
+db.booking.insert({
+"_id":"20170207_02589667W_53",
+"hotel_id":"",
+"hotel_address":"",
+"customer_id":"02589667W",
+"first":"Sinforoso",
+"last":"Plagaitas",
+"checkin_date":"20170701",
+"checkout_date":"20170715",
+"season":"low",
+"occupancy":[{
+"room_id":"",
+"type":"",
+"date":"",
+"price":""}],
+"services":[{
+"service_id":"",
+"date":"",
+"desc":"",
+"price":"",
+"quantity":""}],
+"booking_cost":"",
+"services_cost":""})
+
+
+
+
